@@ -1,5 +1,5 @@
 
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, getAuth } from 'firebase/auth'
 import { firebaseAuth, firebaseDB } from '../boot/firebase'
 import { ref, set } from "firebase/database"
 
@@ -29,9 +29,16 @@ const actions = {
   async signUser({}, payload) {
     try {
       const userCredential = await signInWithEmailAndPassword(firebaseAuth, payload.email, payload.password)
-      console.log(userCredential)
+      return userCredential
     }
     catch(error) {
+      return 'Usuario ou palavra-passe errados'
+    }
+  },
+  async logOff({}, payload) {
+    try {
+      await signOut(getAuth())
+    } catch (error) {
       console.log(error)
     }
   }

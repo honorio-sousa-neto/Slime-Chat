@@ -1,8 +1,6 @@
 <template>
   <q-page>
     <div class="q-pa-md">
-   
-
         <q-list separator>
         <q-item
           v-for="contact in contacts"

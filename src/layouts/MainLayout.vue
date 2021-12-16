@@ -11,6 +11,13 @@
         <q-toolbar-title class="absolute-center">
           Slime Chat
         </q-toolbar-title>
+        <q-btn
+          v-if="route.fullPath.includes('/users')"
+          label="Sair"
+          flat
+          class="absolute-right q-pr-md"
+          to="/"
+        />
 
       </q-toolbar>
     </q-header>

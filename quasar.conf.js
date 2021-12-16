@@ -79,6 +79,9 @@ module.exports = configure(function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
+      plugins: [
+        'Dialog'
+      ],
       config: {},
 
       // iconSet: 'material-icons', // Quasar icon set
